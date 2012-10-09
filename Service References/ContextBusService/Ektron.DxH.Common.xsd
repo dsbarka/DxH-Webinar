@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Exceptions" />
+  <xs:complexType name="PagingTokenOfArrayOfExceptionLogItem_SyeSZ0fs">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PagingTokenOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfExceptionLogItem" Namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Exceptions" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Exceptions" minOccurs="0" name="PageData" nillable="true" type="q1:ArrayOfExceptionLogItem" />
+      <xs:element minOccurs="0" name="TotalNumberOfItems" type="xs:int" />
+      <xs:element minOccurs="0" name="EstimatedPageCount" type="xs:int" />
+      <xs:element minOccurs="0" name="HasMoreItems" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CurrentPage" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagingTokenOfArrayOfExceptionLogItem_SyeSZ0fs" nillable="true" type="tns:PagingTokenOfArrayOfExceptionLogItem_SyeSZ0fs" />
+</xs:schema>

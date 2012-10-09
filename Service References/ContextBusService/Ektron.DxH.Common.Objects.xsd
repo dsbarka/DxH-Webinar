@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfFlyweightObjectDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlyweightObjectDefinition" nillable="true" type="tns:FlyweightObjectDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlyweightObjectDefinition" nillable="true" type="tns:ArrayOfFlyweightObjectDefinition" />
+  <xs:complexType name="FlyweightObjectDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlyweightObjectDefinition" nillable="true" type="tns:FlyweightObjectDefinition" />
+  <xs:complexType name="ArrayOfObjectDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ObjectDefinition" nillable="true" type="tns:ObjectDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfObjectDefinition" nillable="true" type="tns:ArrayOfObjectDefinition" />
+  <xs:complexType name="ObjectDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:ArrayOfFieldDefinition" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Keys" nillable="true" type="tns:ArrayOfFieldDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectDefinition" nillable="true" type="tns:ObjectDefinition" />
+  <xs:complexType name="ArrayOfFieldDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FieldDefinition" nillable="true" type="tns:FieldDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFieldDefinition" nillable="true" type="tns:ArrayOfFieldDefinition" />
+  <xs:complexType name="FieldDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataType" nillable="true" type="tns:FieldType" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsKey" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldDefinition" nillable="true" type="tns:FieldDefinition" />
+  <xs:complexType name="FieldType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Picklist" nillable="true" type="tns:FieldType.NameValuePairs" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldType" nillable="true" type="tns:FieldType" />
+  <xs:complexType name="FieldType.NameValuePairs">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="DisplayName" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="xs:anyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldType.NameValuePairs" nillable="true" type="tns:FieldType.NameValuePairs" />
+  <xs:complexType name="ObjectInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Definition" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:ArrayOfField" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectInstance" nillable="true" type="tns:ObjectInstance" />
+  <xs:complexType name="ArrayOfField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Field" nillable="true" type="tns:Field" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfField" nillable="true" type="tns:ArrayOfField" />
+  <xs:complexType name="Field">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Definition" nillable="true" type="tns:FieldDefinition" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Field" nillable="true" type="tns:Field" />
+  <xs:complexType name="ObjectInstanceCriteriaFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Criteria">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObjectInstanceCriteriaFilter" nillable="true" type="tns:ObjectInstanceCriteriaFilter" />
+  <xs:complexType name="Criteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_Definition" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="Paging" nillable="true" type="tns:PagingInformation" />
+      <xs:element minOccurs="0" name="Condition" type="tns:LogicalOperator" />
+      <xs:element minOccurs="0" name="Filters" nillable="true" type="tns:ArrayOfCriteriaFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Criteria" nillable="true" type="tns:Criteria" />
+  <xs:complexType name="PagingInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPage" type="xs:int" />
+      <xs:element minOccurs="0" name="RecordsPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagingInformation" nillable="true" type="tns:PagingInformation" />
+  <xs:simpleType name="LogicalOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="And" />
+      <xs:enumeration value="Or" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LogicalOperator" nillable="true" type="tns:LogicalOperator" />
+  <xs:complexType name="ArrayOfCriteriaFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CriteriaFilter" nillable="true" type="tns:CriteriaFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCriteriaFilter" nillable="true" type="tns:ArrayOfCriteriaFilter" />
+  <xs:complexType name="CriteriaFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operator" type="tns:ObjectInstanceCriteriaFilterOperator" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CriteriaFilter" nillable="true" type="tns:CriteriaFilter" />
+  <xs:simpleType name="ObjectInstanceCriteriaFilterOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EqualTo" />
+      <xs:enumeration value="NotEqualTo" />
+      <xs:enumeration value="GreaterThan" />
+      <xs:enumeration value="LessThan" />
+      <xs:enumeration value="GreaterThanOrEqualTo" />
+      <xs:enumeration value="LessThanOrEqualTo" />
+      <xs:enumeration value="StartsWith" />
+      <xs:enumeration value="EndsWith" />
+      <xs:enumeration value="Contains" />
+      <xs:enumeration value="DoesNotContain" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ObjectInstanceCriteriaFilterOperator" nillable="true" type="tns:ObjectInstanceCriteriaFilterOperator" />
+  <xs:complexType name="ObjectInstanceList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ObjectInstaceResultBaseOfArrayOfObjectInstanceBaLEMeDf">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObjectInstanceList" nillable="true" type="tns:ObjectInstanceList" />
+  <xs:complexType name="ObjectInstaceResultBaseOfArrayOfObjectInstanceBaLEMeDf">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ObjectInstaceResultBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfObjectInstance" Namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Paging" nillable="true" type="tns:PagingInformation" />
+      <xs:element minOccurs="0" name="Results" nillable="true" type="tns:ArrayOfObjectInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectInstaceResultBaseOfArrayOfObjectInstanceBaLEMeDf" nillable="true" type="tns:ObjectInstaceResultBaseOfArrayOfObjectInstanceBaLEMeDf" />
+  <xs:complexType name="ArrayOfObjectInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ObjectInstance" nillable="true" type="tns:ObjectInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfObjectInstance" nillable="true" type="tns:ArrayOfObjectInstance" />
+</xs:schema>

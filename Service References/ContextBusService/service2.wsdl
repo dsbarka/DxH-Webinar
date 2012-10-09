@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.ektron.com/ContextBus/TaskManager/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ektron.com/ContextBus/TaskManager/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.ektron.com/ContextBus/TaskManager/Imports">
+      <xsd:import namespace="http://www.ektron.com/ContextBus/TaskManager/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.ServiceModel" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Adapters" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://www.ektron.com/ContextBus/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Connectors" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Events" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Operations" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Contracts" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITaskManager_CreateMappingTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMappingTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateMappingTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMappingTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateMappingTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q1:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateSaveObjectTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSaveObjectTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateSaveObjectTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSaveObjectTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateSaveObjectTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q2:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateLoginTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLoginTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateLoginTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLoginTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateLoginTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q3:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateLogoutTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLogoutTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateLogoutTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLogoutTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateLogoutTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q4:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateGetPropertyBagItemsTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGetPropertyBagItemsTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateGetPropertyBagItemsTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGetPropertyBagItemsTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateGetPropertyBagItemsTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q5:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateSavePropertyBagItemTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSavePropertyBagItemTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateSavePropertyBagItemTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSavePropertyBagItemTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateSavePropertyBagItemTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q6:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateGetObjectDefinitionTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGetObjectDefinitionTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateGetObjectDefinitionTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGetObjectDefinitionTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateGetObjectDefinitionTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q7:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateGetObjectInstanceTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGetObjectInstanceTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateGetObjectInstanceTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGetObjectInstanceTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateGetObjectInstanceTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q8:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateInvokeOperationTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInvokeOperationTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateInvokeOperationTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInvokeOperationTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateInvokeOperationTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q9:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_SaveTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_SaveTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_SaveTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q10:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_GetTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_GetTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_GetTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q11:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_ValidateTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_ValidateTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_ValidateTask_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q12:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_ExecuteWorkflow_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWorkflow" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_ExecuteWorkflow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_ExecuteWorkflow_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q13:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateWorkflow_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWorkflow" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateWorkflow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_CreateWorkflow_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q14:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_SaveWorkflow_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWorkflow" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_SaveWorkflow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_SaveWorkflow_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q15:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_DeleteWorkflow_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWorkflow" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_DeleteWorkflow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_DeleteWorkflow_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q16:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_GetWorkflow_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkflow" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_GetWorkflow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_GetWorkflow_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q17:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_GetAllWorkflowNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllWorkflowNames" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_GetAllWorkflowNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllWorkflowNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskManager_GetAllWorkflowNames_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q18:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:portType name="ITaskManager">
+    <wsdl:operation name="CreateMappingTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateMappingTask" message="tns:ITaskManager_CreateMappingTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateMappingTaskResponse" message="tns:ITaskManager_CreateMappingTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateMappingTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_CreateMappingTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSaveObjectTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateSaveObjectTask" message="tns:ITaskManager_CreateSaveObjectTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateSaveObjectTaskResponse" message="tns:ITaskManager_CreateSaveObjectTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateSaveObjectTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_CreateSaveObjectTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLoginTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateLoginTask" message="tns:ITaskManager_CreateLoginTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateLoginTaskResponse" message="tns:ITaskManager_CreateLoginTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateLoginTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_CreateLoginTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLogoutTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateLogoutTask" message="tns:ITaskManager_CreateLogoutTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateLogoutTaskResponse" message="tns:ITaskManager_CreateLogoutTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateLogoutTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_CreateLogoutTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGetPropertyBagItemsTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetPropertyBagItemsTask" message="tns:ITaskManager_CreateGetPropertyBagItemsTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetPropertyBagItemsTaskResponse" message="tns:ITaskManager_CreateGetPropertyBagItemsTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetPropertyBagItemsTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_CreateGetPropertyBagItemsTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSavePropertyBagItemTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateSavePropertyBagItemTask" message="tns:ITaskManager_CreateSavePropertyBagItemTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateSavePropertyBagItemTaskResponse" message="tns:ITaskManager_CreateSavePropertyBagItemTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateSavePropertyBagItemTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_CreateSavePropertyBagItemTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGetObjectDefinitionTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetObjectDefinitionTask" message="tns:ITaskManager_CreateGetObjectDefinitionTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetObjectDefinitionTaskResponse" message="tns:ITaskManager_CreateGetObjectDefinitionTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetObjectDefinitionTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_CreateGetObjectDefinitionTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGetObjectInstanceTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetObjectInstanceTask" message="tns:ITaskManager_CreateGetObjectInstanceTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetObjectInstanceTaskResponse" message="tns:ITaskManager_CreateGetObjectInstanceTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetObjectInstanceTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_CreateGetObjectInstanceTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvokeOperationTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateInvokeOperationTask" message="tns:ITaskManager_CreateInvokeOperationTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateInvokeOperationTaskResponse" message="tns:ITaskManager_CreateInvokeOperationTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateInvokeOperationTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_CreateInvokeOperationTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/SaveTask" message="tns:ITaskManager_SaveTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/SaveTaskResponse" message="tns:ITaskManager_SaveTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/SaveTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_SaveTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetTask" message="tns:ITaskManager_GetTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetTaskResponse" message="tns:ITaskManager_GetTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_GetTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTask">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/ValidateTask" message="tns:ITaskManager_ValidateTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/ValidateTaskResponse" message="tns:ITaskManager_ValidateTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/ValidateTaskExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_ValidateTask_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWorkflow">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/ExecuteWorkflow" message="tns:ITaskManager_ExecuteWorkflow_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/ExecuteWorkflowResponse" message="tns:ITaskManager_ExecuteWorkflow_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/ExecuteWorkflowExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_ExecuteWorkflow_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWorkflow">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateWorkflow" message="tns:ITaskManager_CreateWorkflow_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateWorkflowResponse" message="tns:ITaskManager_CreateWorkflow_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateWorkflowExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_CreateWorkflow_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveWorkflow">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/SaveWorkflow" message="tns:ITaskManager_SaveWorkflow_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/SaveWorkflowResponse" message="tns:ITaskManager_SaveWorkflow_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/SaveWorkflowExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_SaveWorkflow_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkflow">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/DeleteWorkflow" message="tns:ITaskManager_DeleteWorkflow_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/DeleteWorkflowResponse" message="tns:ITaskManager_DeleteWorkflow_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/DeleteWorkflowExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_DeleteWorkflow_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkflow">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetWorkflow" message="tns:ITaskManager_GetWorkflow_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetWorkflowResponse" message="tns:ITaskManager_GetWorkflow_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetWorkflowExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_GetWorkflow_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWorkflowNames">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetAllWorkflowNames" message="tns:ITaskManager_GetAllWorkflowNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetAllWorkflowNamesResponse" message="tns:ITaskManager_GetAllWorkflowNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetAllWorkflowNamesExceptionDetailFault" name="ExceptionDetailFault" message="tns:ITaskManager_GetAllWorkflowNames_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

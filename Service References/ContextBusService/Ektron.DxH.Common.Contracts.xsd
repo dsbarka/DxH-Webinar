@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" />
+  <xs:complexType name="ArrayOfSaveMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SaveMessage" nillable="true" type="tns:SaveMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSaveMessage" nillable="true" type="tns:ArrayOfSaveMessage" />
+  <xs:complexType name="SaveMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TaskExecutionMessage">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="Keys" nillable="true" type="q1:ArrayOfField" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveMessage" nillable="true" type="tns:SaveMessage" />
+  <xs:complexType name="TaskExecutionMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkflowExecutionMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Task" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskExecutionMessage" nillable="true" type="tns:TaskExecutionMessage" />
+  <xs:complexType name="WorkflowExecutionMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContextBusMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Output" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowExecutionMessage" nillable="true" type="tns:WorkflowExecutionMessage" />
+  <xs:complexType name="ContextBusMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Severity" type="tns:MessageSeverity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContextBusMessage" nillable="true" type="tns:ContextBusMessage" />
+  <xs:simpleType name="MessageSeverity">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Info" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MessageSeverity" nillable="true" type="tns:MessageSeverity" />
+  <xs:complexType name="ValidationMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContextBusMessage">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="Field" nillable="true" type="q2:FieldDefinition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidationMessage" nillable="true" type="tns:ValidationMessage" />
+  <xs:complexType name="ArrayOfWorkflowExecutionMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkflowExecutionMessage" nillable="true" type="tns:WorkflowExecutionMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkflowExecutionMessage" nillable="true" type="tns:ArrayOfWorkflowExecutionMessage" />
+  <xs:complexType name="ArrayOfValidationMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValidationMessage" nillable="true" type="tns:ValidationMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValidationMessage" nillable="true" type="tns:ArrayOfValidationMessage" />
+</xs:schema>

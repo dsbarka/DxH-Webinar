@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.ektron.com/ContextBus/ExceptionManager" elementFormDefault="qualified" targetNamespace="http://www.ektron.com/ContextBus/ExceptionManager" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Exceptions" />
+  <xs:element name="GetExceptionLogItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common" minOccurs="0" name="PageTkn" nillable="true" type="q1:PagingTokenOfArrayOfExceptionLogItem_SyeSZ0fs" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Exceptions" minOccurs="0" name="FilterCriteria" nillable="true" type="q2:ExceptionLogCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExceptionLogItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common" minOccurs="0" name="GetExceptionLogItemsResult" nillable="true" type="q3:PagingTokenOfArrayOfExceptionLogItem_SyeSZ0fs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilterBounds">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilterBoundsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Exceptions" minOccurs="0" name="GetFilterBoundsResult" nillable="true" type="q4:FilterBounds" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

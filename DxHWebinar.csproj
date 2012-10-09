@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3539910-BEC5-4A26-8826-8398764BE5C7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DxHWebinar</RootNamespace>
+    <AssemblyName>DxHWebinar</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ContextBus.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=559a2c4fa21e63be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ContextBus.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdventureWorks.aspx" />
+    <Content Include="BuildWorkflow.aspx" />
+    <Content Include="ConnectionInfo.aspx" />
+    <Content Include="EktronDemo.aspx" />
+    <Content Include="ObjectDefinitions.aspx" />
+    <Content Include="ObjectDef.aspx" />
+    <Content Include="ObjectInstances.aspx" />
+    <None Include="Service References\ContextBusService\configuration91.svcinfo" />
+    <None Include="Service References\ContextBusService\configuration.svcinfo" />
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.ConnectionParam.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.ConnectorFlyWeight.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.ContextBusTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.EventDefinition.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.Field.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.FilterBounds.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.FlyweightObjectDefinition.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.GetObjectDefinitionTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.GetObjectInstanceTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.GetPropertyBagItemsTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.InvokeOperationTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.LoginTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.LogoutTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.MappingTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.ObjectDefinition.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.ObjectInstance.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.ObjectInstanceList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.OperationDefinition.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.PagingTokenOfArrayOfExceptionLogItem_SyeSZ0fs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.SaveMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.SaveObjectInstanceTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.SavePropertyBagItemsTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.ValidationMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.Workflow.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\DxHWebinar.ContextBusService.WorkflowExecutionMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextBusService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdventureWorks.aspx.cs">
+      <DependentUpon>AdventureWorks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdventureWorks.aspx.designer.cs">
+      <DependentUpon>AdventureWorks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BuildWorkflow.aspx.cs">
+      <DependentUpon>BuildWorkflow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuildWorkflow.aspx.designer.cs">
+      <DependentUpon>BuildWorkflow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionInfo.aspx.cs">
+      <DependentUpon>ConnectionInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConnectionInfo.aspx.designer.cs">
+      <DependentUpon>ConnectionInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EktronDemo.aspx.cs">
+      <DependentUpon>EktronDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EktronDemo.aspx.designer.cs">
+      <DependentUpon>EktronDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectDefinitions.aspx.cs">
+      <DependentUpon>ObjectDefinitions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ObjectDefinitions.aspx.designer.cs">
+      <DependentUpon>ObjectDefinitions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectDef.aspx.cs">
+      <DependentUpon>ObjectDef.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ObjectDef.aspx.designer.cs">
+      <DependentUpon>ObjectDef.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectInstances.aspx.cs">
+      <DependentUpon>ObjectInstances.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ObjectInstances.aspx.designer.cs">
+      <DependentUpon>ObjectInstances.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ContextBusService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ContextBusService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ContextBusService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\Ektron.DxH.Common.Adapters.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\Ektron.DxH.Common.Connectors.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\Ektron.DxH.Common.Contracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\Ektron.DxH.Common.Events.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\Ektron.DxH.Common.Exceptions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\Ektron.DxH.Common.Objects.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\Ektron.DxH.Common.Operations.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\Ektron.DxH.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\Ektron.DxH.Logging.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\Ektron.DxH.Tasks.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\ExceptionManager.wsdl" />
+    <None Include="Service References\ContextBusService\ExceptionManager.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\service.wsdl" />
+    <None Include="Service References\ContextBusService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\service1.wsdl" />
+    <None Include="Service References\ContextBusService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\service2.wsdl" />
+    <None Include="Service References\ContextBusService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\service3.wsdl" />
+    <None Include="Service References\ContextBusService\service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextBusService\System.ServiceModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49737</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

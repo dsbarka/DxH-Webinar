@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.ektron.com/ContextBus/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ektron.com/ContextBus/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.ektron.com/ContextBus/Imports">
+      <xsd:import namespace="http://www.ektron.com/ContextBus/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.ServiceModel" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Adapters" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Connectors" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Events" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Operations" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Contracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IContextBus_GetRegisteredConnectorList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegisteredConnectorList" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetRegisteredConnectorList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegisteredConnectorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetRegisteredConnectorList_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q1:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetConnectionParameterList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnectionParameterList" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetConnectionParameterList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnectionParameterListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetConnectionParameterList_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q2:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_SaveConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConnection" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_SaveConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_SaveConnection_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q3:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_LoadConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadConnection" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_LoadConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_LoadConnection_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q4:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_DeleteConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConnection" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_DeleteConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_DeleteConnection_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q5:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_TestConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnection" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_TestConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_TestConnection_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q6:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectDefinitionNameList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectDefinitionNameList" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectDefinitionNameList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectDefinitionNameListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectDefinitionNameList_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q7:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectDefinitionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectDefinitionList" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectDefinitionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectDefinitionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectDefinitionList_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q8:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetEventDefinitionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventDefinitionList" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetEventDefinitionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventDefinitionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetEventDefinitionList_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q9:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetOperationDefinitionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationDefinitionList" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetOperationDefinitionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationDefinitionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetOperationDefinitionList_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q10:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_InvokeOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:InvokeOperation" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_InvokeOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InvokeOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_InvokeOperation_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q11:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectInstance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectInstance" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectInstance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectInstance_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q12:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectInstanceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectInstanceList" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectInstanceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectInstanceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_GetObjectInstanceList_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q13:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_SaveObjectInstance_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveObjectInstance" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_SaveObjectInstance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveObjectInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_SaveObjectInstance_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q14:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_Login_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q15:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContextBus_Logout_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q16:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:portType name="IContextBus">
+    <wsdl:operation name="GetRegisteredConnectorList">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetRegisteredConnectorList" message="tns:IContextBus_GetRegisteredConnectorList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetRegisteredConnectorListResponse" message="tns:IContextBus_GetRegisteredConnectorList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetRegisteredConnectorListExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_GetRegisteredConnectorList_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConnectionParameterList">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetConnectionParameterList" message="tns:IContextBus_GetConnectionParameterList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetConnectionParameterListResponse" message="tns:IContextBus_GetConnectionParameterList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetConnectionParameterListExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_GetConnectionParameterList_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveConnection">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/SaveConnection" message="tns:IContextBus_SaveConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/SaveConnectionResponse" message="tns:IContextBus_SaveConnection_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/SaveConnectionExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_SaveConnection_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadConnection">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/LoadConnection" message="tns:IContextBus_LoadConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/LoadConnectionResponse" message="tns:IContextBus_LoadConnection_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/LoadConnectionExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_LoadConnection_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteConnection">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/DeleteConnection" message="tns:IContextBus_DeleteConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/DeleteConnectionResponse" message="tns:IContextBus_DeleteConnection_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/DeleteConnectionExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_DeleteConnection_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestConnection">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/TestConnection" message="tns:IContextBus_TestConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/TestConnectionResponse" message="tns:IContextBus_TestConnection_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/TestConnectionExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_TestConnection_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectDefinitionNameList">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectDefinitionNameList" message="tns:IContextBus_GetObjectDefinitionNameList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectDefinitionNameListResponse" message="tns:IContextBus_GetObjectDefinitionNameList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectDefinitionNameListExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_GetObjectDefinitionNameList_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectDefinitionList">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectDefinitionList" message="tns:IContextBus_GetObjectDefinitionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectDefinitionListResponse" message="tns:IContextBus_GetObjectDefinitionList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectDefinitionListExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_GetObjectDefinitionList_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventDefinitionList">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetEventDefinitionList" message="tns:IContextBus_GetEventDefinitionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetEventDefinitionListResponse" message="tns:IContextBus_GetEventDefinitionList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetEventDefinitionListExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_GetEventDefinitionList_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationDefinitionList">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetOperationDefinitionList" message="tns:IContextBus_GetOperationDefinitionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetOperationDefinitionListResponse" message="tns:IContextBus_GetOperationDefinitionList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetOperationDefinitionListExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_GetOperationDefinitionList_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InvokeOperation">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/InvokeOperation" message="tns:IContextBus_InvokeOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/InvokeOperationResponse" message="tns:IContextBus_InvokeOperation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/InvokeOperationExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_InvokeOperation_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectInstance">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectInstance" message="tns:IContextBus_GetObjectInstance_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectInstanceResponse" message="tns:IContextBus_GetObjectInstance_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectInstanceExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_GetObjectInstance_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectInstanceList">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectInstanceList" message="tns:IContextBus_GetObjectInstanceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectInstanceListResponse" message="tns:IContextBus_GetObjectInstanceList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/GetObjectInstanceListExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_GetObjectInstanceList_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveObjectInstance">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/SaveObjectInstance" message="tns:IContextBus_SaveObjectInstance_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/SaveObjectInstanceResponse" message="tns:IContextBus_SaveObjectInstance_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/SaveObjectInstanceExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_SaveObjectInstance_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/Login" message="tns:IContextBus_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/LoginResponse" message="tns:IContextBus_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/LoginExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_Login_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/Logout" message="tns:IContextBus_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/LogoutResponse" message="tns:IContextBus_Logout_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/IContextBus/LogoutExceptionDetailFault" name="ExceptionDetailFault" message="tns:IContextBus_Logout_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

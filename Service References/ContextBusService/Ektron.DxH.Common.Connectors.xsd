@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Connectors" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Connectors" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfConnectionParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConnectionParam" nillable="true" type="tns:ConnectionParam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConnectionParam" nillable="true" type="tns:ArrayOfConnectionParam" />
+  <xs:complexType name="ConnectionParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPassword" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConnectionParam" nillable="true" type="tns:ConnectionParam" />
+</xs:schema>

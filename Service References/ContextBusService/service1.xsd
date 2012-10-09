@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.ektron.com/ContextBus/" elementFormDefault="qualified" targetNamespace="http://www.ektron.com/ContextBus/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Adapters" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Connectors" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Events" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Operations" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Contracts" />
+  <xs:element name="GetRegisteredConnectorList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegisteredConnectorListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Adapters" minOccurs="0" name="GetRegisteredConnectorListResult" nillable="true" type="q1:ArrayOfConnectorFlyWeight" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConnectionParameterList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConnectionParameterListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Connectors" minOccurs="0" name="GetConnectionParameterListResult" nillable="true" type="q2:ArrayOfConnectionParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConnection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Connectors" minOccurs="0" name="parameters" nillable="true" type="q3:ArrayOfConnectionParam" />
+        <xs:element minOccurs="0" name="connectionName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConnectionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadConnection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectionName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadConnectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Connectors" minOccurs="0" name="LoadConnectionResult" nillable="true" type="q4:ArrayOfConnectionParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteConnection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectionName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteConnectionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestConnection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Connectors" minOccurs="0" name="parameters" nillable="true" type="q5:ArrayOfConnectionParam" />
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestConnectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TestConnectionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectDefinitionNameList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectDefinitionNameListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="GetObjectDefinitionNameListResult" nillable="true" type="q6:ArrayOfFlyweightObjectDefinition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectDefinitionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="flyweights" nillable="true" type="q7:ArrayOfFlyweightObjectDefinition" />
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectDefinitionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="GetObjectDefinitionListResult" nillable="true" type="q8:ArrayOfObjectDefinition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventDefinitionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventDefinitionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Events" minOccurs="0" name="GetEventDefinitionListResult" nillable="true" type="q9:ArrayOfEventDefinition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationDefinitionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationDefinitionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Operations" minOccurs="0" name="GetOperationDefinitionListResult" nillable="true" type="q10:ArrayOfOperationDefinition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InvokeOperation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Operations" minOccurs="0" name="operation" nillable="true" type="q11:OperationInstance" />
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InvokeOperationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="InvokeOperationResult" nillable="true" type="q12:ArrayOfField" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectInstance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="objectDefinition" nillable="true" type="q13:ObjectDefinition" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="keyValues" nillable="true" type="q14:ArrayOfKeyValueOfstringanyType" />
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectInstanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="GetObjectInstanceResult" nillable="true" type="q15:ObjectInstance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectInstanceList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="objectDefinition" nillable="true" type="q16:ObjectDefinition" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="criteria" nillable="true" type="q17:ObjectInstanceCriteriaFilter" />
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectInstanceListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="GetObjectInstanceListResult" nillable="true" type="q18:ObjectInstanceList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveObjectInstance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="objectInstance" nillable="true" type="q19:ObjectInstance" />
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveObjectInstanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Contracts" minOccurs="0" name="SaveObjectInstanceResult" nillable="true" type="q20:ArrayOfSaveMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Connectors" minOccurs="0" name="parameters" nillable="true" type="q21:ArrayOfConnectionParam" />
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectorId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

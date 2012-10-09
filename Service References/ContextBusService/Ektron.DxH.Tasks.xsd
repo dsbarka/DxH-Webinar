@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="SaveObjectInstanceTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContextBusTask">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Connector" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveObjectInstanceTask" nillable="true" type="tns:SaveObjectInstanceTask" />
+  <xs:complexType name="ContextBusTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContextBusTask" nillable="true" type="tns:ContextBusTask" />
+  <xs:complexType name="LoginTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContextBusTask">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Connection" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Connector" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginTask" nillable="true" type="tns:LoginTask" />
+  <xs:complexType name="MappingTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContextBusTask">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="SourceObject" nillable="true" type="q1:ObjectDefinition" />
+          <xs:element minOccurs="0" name="TargetFields" nillable="true" type="tns:FieldCollection" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="TargetObject" nillable="true" type="q2:ObjectDefinition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MappingTask" nillable="true" type="tns:MappingTask" />
+  <xs:complexType name="FieldCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MappableField" nillable="true" type="tns:MappableField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldCollection" nillable="true" type="tns:FieldCollection" />
+  <xs:complexType name="MappableField">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="DataType" nillable="true" type="q3:FieldType" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mapping" nillable="true" type="tns:MappedValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MappableField" nillable="true" type="tns:MappableField" />
+  <xs:complexType name="MappedValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MappingType" type="tns:MappingType" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MappedValue" nillable="true" type="tns:MappedValue" />
+  <xs:simpleType name="MappingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotAssigned" />
+      <xs:enumeration value="FieldMapping" />
+      <xs:enumeration value="ConstMapping" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MappingType" nillable="true" type="tns:MappingType" />
+  <xs:complexType name="LogoutTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContextBusTask">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Connector" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogoutTask" nillable="true" type="tns:LogoutTask" />
+  <xs:complexType name="GetObjectInstanceTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContextBusTask">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Connector" nillable="true" type="xs:string" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="ObjectDefinition" nillable="true" type="q4:ObjectDefinition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetObjectInstanceTask" nillable="true" type="tns:GetObjectInstanceTask" />
+  <xs:complexType name="GetObjectDefinitionTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContextBusTask">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Connector" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ObjectId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetObjectDefinitionTask" nillable="true" type="tns:GetObjectDefinitionTask" />
+  <xs:complexType name="GetPropertyBagItemsTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContextBusTask">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ItemNames" nillable="true" type="q5:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPropertyBagItemsTask" nillable="true" type="tns:GetPropertyBagItemsTask" />
+  <xs:complexType name="SavePropertyBagItemsTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContextBusTask">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ItemNames" nillable="true" type="q6:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SavePropertyBagItemsTask" nillable="true" type="tns:SavePropertyBagItemsTask" />
+  <xs:complexType name="InvokeOperationTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContextBusTask">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Connector" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvokeOperationTask" nillable="true" type="tns:InvokeOperationTask" />
+  <xs:complexType name="Workflow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Input" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="Output" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="Tasks" nillable="true" type="tns:ArrayOfContextBusTask" />
+      <xs:element minOccurs="0" name="WorkflowName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Workflow" nillable="true" type="tns:Workflow" />
+  <xs:complexType name="ArrayOfContextBusTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContextBusTask" nillable="true" type="tns:ContextBusTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContextBusTask" nillable="true" type="tns:ArrayOfContextBusTask" />
+</xs:schema>

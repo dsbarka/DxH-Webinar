@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.ektron.com/ContextBus/ExceptionManager" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ektron.com/ContextBus/ExceptionManager" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.ektron.com/ContextBus/ExceptionManager/Imports">
+      <xsd:import namespace="http://www.ektron.com/ContextBus/ExceptionManager" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.ServiceModel" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Adapters" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://www.ektron.com/ContextBus/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Connectors" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Events" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Operations" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Contracts" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" />
+      <xsd:import namespace="http://www.ektron.com/ContextBus/TaskManager/" />
+      <xsd:import namespace="http://www.ektron.com/ContextBus/EventManager/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Exceptions" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Logging" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IExceptionManager_GetExceptionLogItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExceptionLogItems" />
+  </wsdl:message>
+  <wsdl:message name="IExceptionManager_GetExceptionLogItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExceptionLogItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExceptionManager_GetExceptionLogItems_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q1:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IExceptionManager_GetFilterBounds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilterBounds" />
+  </wsdl:message>
+  <wsdl:message name="IExceptionManager_GetFilterBounds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilterBoundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExceptionManager_GetFilterBounds_ExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q2:ExceptionDetail" />
+  </wsdl:message>
+  <wsdl:portType name="IExceptionManager">
+    <wsdl:operation name="GetExceptionLogItems">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/ExceptionManager/IExceptionManager/GetExceptionLogItems" message="tns:IExceptionManager_GetExceptionLogItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/ExceptionManager/IExceptionManager/GetExceptionLogItemsResponse" message="tns:IExceptionManager_GetExceptionLogItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/ExceptionManager/IExceptionManager/GetExceptionLogItemsExceptionDetailFault" name="ExceptionDetailFault" message="tns:IExceptionManager_GetExceptionLogItems_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilterBounds">
+      <wsdl:input wsaw:Action="http://www.ektron.com/ContextBus/ExceptionManager/IExceptionManager/GetFilterBounds" message="tns:IExceptionManager_GetFilterBounds_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ektron.com/ContextBus/ExceptionManager/IExceptionManager/GetFilterBoundsResponse" message="tns:IExceptionManager_GetFilterBounds_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ektron.com/ContextBus/ExceptionManager/IExceptionManager/GetFilterBoundsExceptionDetailFault" name="ExceptionDetailFault" message="tns:IExceptionManager_GetFilterBounds_ExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:i3="http://www.ektron.com/ContextBus/ExceptionManager" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://www.ektron.com/ContextBus/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="http://www.ektron.com/ContextBus/TaskManager/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:i2="http://www.ektron.com/ContextBus/EventManager/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ContextBus" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IContextBus_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ITaskManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IEventManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IExceptionManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.ektron.com/ContextBus/" location="" />
+  <wsdl:import namespace="http://www.ektron.com/ContextBus/TaskManager/" location="" />
+  <wsdl:import namespace="http://www.ektron.com/ContextBus/EventManager/" location="" />
+  <wsdl:import namespace="http://www.ektron.com/ContextBus/ExceptionManager" location="" />
+  <wsdl:types />
+  <wsdl:binding name="NetTcpBinding_IContextBus" type="i0:IContextBus">
+    <wsp:PolicyReference URI="#NetTcpBinding_IContextBus_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetRegisteredConnectorList">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/GetRegisteredConnectorList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetConnectionParameterList">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/GetConnectionParameterList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConnection">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/SaveConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoadConnection">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/LoadConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteConnection">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/DeleteConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnection">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/TestConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectDefinitionNameList">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/GetObjectDefinitionNameList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectDefinitionList">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/GetObjectDefinitionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventDefinitionList">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/GetEventDefinitionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationDefinitionList">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/GetOperationDefinitionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InvokeOperation">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/InvokeOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectInstance">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/GetObjectInstance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectInstanceList">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/GetObjectInstanceList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveObjectInstance">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/SaveObjectInstance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/IContextBus/Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ITaskManager" type="i1:ITaskManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_ITaskManager_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="CreateMappingTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateMappingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSaveObjectTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateSaveObjectTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLoginTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateLoginTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLogoutTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateLogoutTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGetPropertyBagItemsTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetPropertyBagItemsTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSavePropertyBagItemTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateSavePropertyBagItemTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGetObjectDefinitionTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetObjectDefinitionTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGetObjectInstanceTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateGetObjectInstanceTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvokeOperationTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateInvokeOperationTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/SaveTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTask">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/ValidateTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWorkflow">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/ExecuteWorkflow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWorkflow">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/CreateWorkflow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveWorkflow">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/SaveWorkflow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkflow">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/DeleteWorkflow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkflow">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetWorkflow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWorkflowNames">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/TaskManager/ITaskManager/GetAllWorkflowNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IEventManager" type="i2:IEventManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_IEventManager_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="RaiseEvent">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/EventManager/IEventManager/RaiseEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateWorkflowsToEvent">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/EventManager/IEventManager/AssociateWorkflowsToEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IExceptionManager" type="i3:IExceptionManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_IExceptionManager_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetExceptionLogItems">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/ExceptionManager/IExceptionManager/GetExceptionLogItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilterBounds">
+      <soap12:operation soapAction="http://www.ektron.com/ContextBus/ExceptionManager/IExceptionManager/GetFilterBounds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionDetailFault">
+        <soap12:fault use="literal" name="ExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContextBus">
+    <wsdl:port name="NetTcpBinding_IContextBus" binding="tns:NetTcpBinding_IContextBus">
+      <soap12:address location="net.tcp://localhost:9002/ContextBus" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9002/ContextBus</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ITaskManager" binding="tns:NetTcpBinding_ITaskManager">
+      <soap12:address location="net.tcp://localhost:9002/ContextBus" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9002/ContextBus</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IEventManager" binding="tns:NetTcpBinding_IEventManager">
+      <soap12:address location="net.tcp://localhost:9002/ContextBus" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9002/ContextBus</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IExceptionManager" binding="tns:NetTcpBinding_IExceptionManager">
+      <soap12:address location="net.tcp://localhost:9002/ContextBus" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9002/ContextBus</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.ektron.com/ContextBus/TaskManager/" elementFormDefault="qualified" targetNamespace="http://www.ektron.com/ContextBus/TaskManager/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Contracts" />
+  <xs:element name="CreateMappingTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="sourceObject" nillable="true" type="q1:ObjectDefinition" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="targetObject" nillable="true" type="q2:ObjectDefinition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMappingTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="CreateMappingTaskResult" nillable="true" type="q3:MappingTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSaveObjectTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSaveObjectTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="CreateSaveObjectTaskResult" nillable="true" type="q4:SaveObjectInstanceTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLoginTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectorName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="connectionName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLoginTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="CreateLoginTaskResult" nillable="true" type="q5:LoginTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLogoutTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLogoutTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="CreateLogoutTaskResult" nillable="true" type="q6:LogoutTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateGetPropertyBagItemsTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="itemNames" nillable="true" type="q7:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateGetPropertyBagItemsTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="CreateGetPropertyBagItemsTaskResult" nillable="true" type="q8:GetPropertyBagItemsTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSavePropertyBagItemTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="itemNames" nillable="true" type="q9:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSavePropertyBagItemTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="CreateSavePropertyBagItemTaskResult" nillable="true" type="q10:SavePropertyBagItemsTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateGetObjectDefinitionTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectorName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="objectId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateGetObjectDefinitionTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="CreateGetObjectDefinitionTaskResult" nillable="true" type="q11:GetObjectDefinitionTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateGetObjectInstanceTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectorName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Objects" minOccurs="0" name="objectDefinition" nillable="true" type="q12:ObjectDefinition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateGetObjectInstanceTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="CreateGetObjectInstanceTaskResult" nillable="true" type="q13:GetObjectInstanceTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInvokeOperationTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectorName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="operationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInvokeOperationTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="CreateInvokeOperationTaskResult" nillable="true" type="q14:InvokeOperationTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="task" nillable="true" type="q15:ContextBusTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SaveTaskResult" type="q16:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="taskID" type="q17:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="GetTaskResult" nillable="true" type="q18:ContextBusTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="task" nillable="true" type="q19:ContextBusTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Contracts" minOccurs="0" name="ValidateTaskResult" nillable="true" type="q20:ArrayOfValidationMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteWorkflow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="workflow" nillable="true" type="q21:Workflow" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PropertyBagPresets" nillable="true" type="q22:ArrayOfKeyValueOfstringFieldD8JHbVNL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteWorkflowResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Contracts" minOccurs="0" name="ExecuteWorkflowResult" nillable="true" type="q23:ArrayOfWorkflowExecutionMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkflow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workflowName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkflowResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="CreateWorkflowResult" nillable="true" type="q24:Workflow" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveWorkflow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="workflow" nillable="true" type="q25:Workflow" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveWorkflowResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkflow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WorkflowName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkflowResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkflow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workflowName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkflowResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Ektron.DxH.Tasks" minOccurs="0" name="GetWorkflowResult" nillable="true" type="q26:Workflow" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllWorkflowNames">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllWorkflowNamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllWorkflowNamesResult" nillable="true" type="q27:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

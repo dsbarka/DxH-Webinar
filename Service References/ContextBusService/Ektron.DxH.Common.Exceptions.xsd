@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Exceptions" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Common.Exceptions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Ektron.DxH.Logging" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfExceptionLogItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExceptionLogItem" nillable="true" type="tns:ExceptionLogItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExceptionLogItem" nillable="true" type="tns:ArrayOfExceptionLogItem" />
+  <xs:complexType name="ExceptionLogItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EventID" type="xs:int" />
+      <xs:element minOccurs="0" name="LogRowID" type="xs:long" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ektron.DxH.Logging" minOccurs="0" name="Severity" type="q1:LogSeverity" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExceptionLogItem" nillable="true" type="tns:ExceptionLogItem" />
+  <xs:complexType name="ExceptionLogCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Filters" nillable="true" type="tns:ArrayOfExceptionLogFilter" />
+      <xs:element minOccurs="0" name="SortOrder" type="tns:ExceptionLogSortOrder" />
+      <xs:element minOccurs="0" name="SortPropertyName" type="tns:ExceptionLogProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExceptionLogCriteria" nillable="true" type="tns:ExceptionLogCriteria" />
+  <xs:complexType name="ArrayOfExceptionLogFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExceptionLogFilter" nillable="true" type="tns:ExceptionLogFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExceptionLogFilter" nillable="true" type="tns:ArrayOfExceptionLogFilter" />
+  <xs:complexType name="ExceptionLogFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FilterPropertyName" type="tns:ExceptionLogProperty" />
+      <xs:element minOccurs="0" name="Operator" type="tns:ExceptionLogOperator" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExceptionLogFilter" nillable="true" type="tns:ExceptionLogFilter" />
+  <xs:simpleType name="ExceptionLogProperty">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Severity" />
+      <xs:enumeration value="Date" />
+      <xs:enumeration value="Source" />
+      <xs:enumeration value="EventID" />
+      <xs:enumeration value="LogID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExceptionLogProperty" nillable="true" type="tns:ExceptionLogProperty" />
+  <xs:simpleType name="ExceptionLogOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="In" />
+      <xs:enumeration value="Between" />
+      <xs:enumeration value="Equals" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExceptionLogOperator" nillable="true" type="tns:ExceptionLogOperator" />
+  <xs:simpleType name="ExceptionLogSortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ascending" />
+      <xs:enumeration value="Descending" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExceptionLogSortOrder" nillable="true" type="tns:ExceptionLogSortOrder" />
+  <xs:complexType name="FilterBounds">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EventIDs" nillable="true" type="q2:ArrayOfint" />
+      <xs:element minOccurs="0" name="MaxDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MinDate" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ektron.DxH.Logging" minOccurs="0" name="Severities" nillable="true" type="q3:ArrayOfLogSeverity" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Sources" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilterBounds" nillable="true" type="tns:FilterBounds" />
+</xs:schema>

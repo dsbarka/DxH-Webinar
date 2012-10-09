@@ -1,0 +1,5 @@
+C:\inetpub\wwwroot\DxHWebinar\DxHWebinar\bin\DxHWebinar.dll
+C:\inetpub\wwwroot\DxHWebinar\DxHWebinar\bin\DxHWebinar.pdb
+C:\inetpub\wwwroot\DxHWebinar\DxHWebinar\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\DxHWebinar\DxHWebinar\obj\Debug\DxHWebinar.dll
+C:\inetpub\wwwroot\DxHWebinar\DxHWebinar\obj\Debug\DxHWebinar.pdb
